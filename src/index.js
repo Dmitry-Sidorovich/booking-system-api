@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+const userRoutes = require('./routes/user.routes');
+app.use('/users', userRoutes);
+
 app.get('/', (req, res) => {
     res.send('Booking system API is running!');
 })
